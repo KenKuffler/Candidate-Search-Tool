@@ -38,8 +38,3 @@
 ├── tsconfig.json
 |-- tsconfig.node.json
 └── vite.config.ts
-
-curl --request GET \
---url "https://api.github.com/octocat" \
---header "Authorization: Bearer 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" \
---header "X-GitHub-Api-Version: 2022-11-28"
