@@ -139,8 +139,7 @@ tbody tr:nth-child(odd) {
   color: white; /* White text */
   padding: 10px; /* Add some padding */
   text-align: center; /* Center text */
-  margin-bottom: 0; /* Remove bottom margin */
-  margin-top: 0;
+  margin: 0; /* Remove top and bottom margin */
 }
 
 .button-container {
@@ -170,4 +169,10 @@ tbody tr:nth-child(odd) {
 
 .button-minus {
   background-color: red; /* Red for - button */
+}
+
+.candidates-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between candidate cards */
 }

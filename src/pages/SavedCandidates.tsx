@@ -31,25 +31,38 @@ const SavedCandidates = () => {
   };
 
   return (
-    <>
+    <div>
       <h1>Potential Candidates</h1>
       {savedCandidates.length > 0 ? (
-        <ul>
+        <div className="candidates-list">
           {savedCandidates.map((candidate) => (
-            <li key={candidate.id}>
-              <h2>{candidate.name}</h2>
-              <p>{candidate.username}</p>
-              <p>{candidate.location}</p>
-              <p>{candidate.email}</p>
-              <img src={candidate.avatar} alt={`${candidate.name}'s avatar`} />
-              <button onClick={() => removeCandidate(candidate.id)}>-</button> {/* Remove candidate button */}
-            </li>
+            <div key={candidate.id} className="candidate-card">
+              {/* Top section for avatar */}
+              <img
+                src={candidate.avatar}
+                alt={`${candidate.name}'s avatar`}
+                className="candidate-avatar"
+              />
+              
+              {/* Bottom section for candidate info */}
+              <div className="candidate-info">
+                <h2>{candidate.name}</h2>
+                <p>{candidate.username}</p>
+                <p>{candidate.location || "Location not provided"}</p>
+                <p>{candidate.email || "Email not provided"}</p>
+              </div>
+              
+              {/* Button to remove candidate */}
+              <div className="button-container">
+                <button className="button button-minus" onClick={() => removeCandidate(candidate.id)}>-</button>
+              </div>
+            </div>
           ))}
-        </ul>
+        </div>
       ) : (
         <p>{message}</p> // Show message if no candidates are saved
       )}
-    </>
+    </div>
   );
 };
 
