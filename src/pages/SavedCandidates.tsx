@@ -31,39 +31,47 @@ const SavedCandidates = () => {
   };
 
   return (
-    <div>
+    <div className="saved-candidates-container">
       <h1>Potential Candidates</h1>
-      {savedCandidates.length > 0 ? (
-        <div className="candidates-list">
-          {savedCandidates.map((candidate) => (
-            <div key={candidate.id} className="candidate-card">
-              {/* Top section for avatar */}
-              <img
-                src={candidate.avatar}
-                alt={`${candidate.name}'s avatar`}
-                className="candidate-avatar"
-              />
-              
-              {/* Bottom section for candidate info */}
-              <div className="candidate-info">
-                <h2>{candidate.name}</h2>
-                <p>{candidate.username}</p>
-                <p>{candidate.location || "Location not provided"}</p>
-                <p>{candidate.email || "Email not provided"}</p>
+      <div className="saved-candidates-grid">
+        {/* Header Row */}
+        <div className="saved-grid-row saved-grid-header">
+          <div className="saved-grid-cell">Avatar</div>
+          <div className="saved-grid-cell">Name & GitHub</div>
+          <div className="saved-grid-cell">Location</div>
+          <div className="saved-grid-cell">E-Mail</div>
+          <div className="saved-grid-cell">Company</div>
+          <div className="saved-grid-cell">Reject Candidate</div>
+        </div>
+
+        {savedCandidates.length > 0 ? (
+          savedCandidates.map((candidate) => (
+            <div className="saved-grid-row" key={candidate.id}>
+              <div className="saved-grid-cell">
+                <img src={candidate.avatar} alt={`${candidate.name}'s avatar`} className="saved-candidate-avatar" />
               </div>
-              
-              {/* Button to remove candidate */}
-              <div className="button-container">
-                <button className="button button-minus" onClick={() => removeCandidate(candidate.id)}>-</button>
+              <div className="saved-grid-cell">
+                <h2>{candidate.name}</h2>
+                <p>
+                  <a href={candidate.html_url} target="_blank" rel="noopener noreferrer">
+                    View GitHub Profile
+                  </a>
+                </p>
+              </div>
+              <div className="saved-grid-cell">{candidate.location || "Location not provided"}</div>
+              <div className="saved-grid-cell">{candidate.email || "Email not provided"}</div>
+              <div className="saved-grid-cell">{candidate.company || "Company not provided"}</div>
+              <div className="saved-grid-cell">
+                <button onClick={() => removeCandidate(candidate.id)}>-</button>
               </div>
             </div>
-          ))}
-        </div>
-      ) : (
-        <p>{message}</p> // Show message if no candidates are saved
-      )}
+          ))
+        ) : (
+          <p>{message}</p> // Show message if no candidates are saved
+        )}
+      </div>
     </div>
   );
 };
 
-export default SavedCandidates;
+export default SavedCandidates

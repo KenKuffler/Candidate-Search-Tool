@@ -176,3 +176,69 @@ tbody tr:nth-child(odd) {
   flex-direction: column;
   gap: 20px; /* Space between candidate cards */
 }
+
+/* SaveCandidates styles */
+.saved-candidates-container {
+  padding: 20px; /* Padding for overall container */
+}
+
+.saved-candidates-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 equal columns */
+  gap: 10px; /* Gap between cells */
+}
+
+.saved-grid-row {
+  display: contents; /* Allows the grid to maintain layout without extra divs */
+}
+
+.saved-grid-header {
+  background-color: black; /* Black background for header */
+  color: white; /* White text color */
+  font-weight: bold; /* Bold font for header */
+  text-align: center; /* Center text */
+  padding: 10px; /* Add padding */
+}
+
+.saved-grid-cell {
+  padding: 10px; /* Padding for cells */
+  border: 1px solid #ccc; /* Light border for cells */
+  color: white; /* White text color */
+  background-color: #333; /* Dark gray background for candidate rows */
+  display: flex; /* Use flexbox for cell layout */
+  align-items: center; /* Center cell content vertically */
+  justify-content: center; /* Center cell content horizontally */
+  flex-direction: column; /* Stack content vertically */
+}
+
+/* Ensure avatar is styled correctly */
+.saved-candidate-avatar {
+  width: 50px; /* Fixed width for avatar */
+  height: 50px; /* Fixed height for avatar */
+  border-radius: 50%; /* Make avatar circular */
+}
+
+/* Button styles */
+.saved-grid-cell button {
+  padding: 10px 15px; /* Increase button padding for larger size */
+  background-color: red; /* Button color */
+  color: white; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Increase font size */
+  width: 50%; /* Full width to occupy entire cell */
+  height: 50%; /* Full height to occupy entire cell */
+  display: flex; /* Use flexbox to center content */
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+}
+
+.saved-grid-cell h2 {
+  margin: 0; /* Remove default margin */
+}
+
+.saved-grid-cell p {
+  margin: 5px 0 0 0; /* Add margin for spacing between name and link */
+  text-align: center; /* Center the text */
+}
