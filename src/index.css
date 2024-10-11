@@ -118,3 +118,56 @@ tbody tr:nth-child(odd) {
   width: 80vw;
   table-layout: fixed;
 }
+
+/* CUSTOM CSS STYLINGS */
+
+.candidate-card {
+  width: 300px; /* Adjust width as needed */
+  margin: 0 auto; /* Center card horizontally without top or bottom margin */
+  border-radius: 10px; /* Rounded corners */
+  overflow: hidden; /* Ensure child elements stay within bounds */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Add some shadow */
+}
+
+.candidate-avatar {
+  width: 100%; /* Full width of the card */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.candidate-info {
+  background-color: black; /* Black background */
+  color: white; /* White text */
+  padding: 10px; /* Add some padding */
+  text-align: center; /* Center text */
+  margin-bottom: 0; /* Remove bottom margin */
+  margin-top: 0;
+}
+
+.button-container {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space buttons to edges */
+  width: 100%; /* Full width */
+  margin-top: 0; /* Remove margin to eliminate gap */
+  padding: 0; /* Ensure no padding */
+}
+
+.button {
+  width: 40px; /* Fixed width for buttons */
+  height: 40px; /* Fixed height for buttons */
+  border: none; /* No border */
+  border-radius: 50%; /* Circular buttons */
+  font-size: 20px; /* Larger font size */
+  color: white; /* White text */
+  cursor: pointer; /* Pointer cursor on hover */
+  display: flex; /* Flexbox for centering content */
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+}
+
+.button-plus {
+  background-color: green; /* Green for + button */
+}
+
+.button-minus {
+  background-color: red; /* Red for - button */
+}

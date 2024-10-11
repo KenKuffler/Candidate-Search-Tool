@@ -72,24 +72,37 @@ const CandidateSearch = () => {
     <div>
       <h1>Candidate Search</h1>
       {currentCandidate ? (
-        <div key={currentCandidate.id}>
-          <h2>{currentCandidate.name}</h2>
-          <p>
-            <a href={currentCandidate.html_url} target="_blank" rel="noopener noreferrer">
-              View GitHub Profile
-            </a>
-          </p>
-          <p>{currentCandidate.location || "Location not provided"}</p>
-          <p>{currentCandidate.email || "Email not provided"}</p>
-          <img src={currentCandidate.avatar} alt={`${currentCandidate.name}'s avatar`} />
-          <button onClick={saveCandidate}>+</button>
-          <button onClick={removeCandidate}>-</button>
+        <div key={currentCandidate.id} className="candidate-card">
+          {/* Top section for avatar */}
+          <img
+            src={currentCandidate.avatar}
+            alt={`${currentCandidate.name}'s avatar`}
+            className="candidate-avatar"
+          />
+          
+          {/* Bottom section for candidate info */}
+          <div className="candidate-info">
+            <h2>{currentCandidate.name}</h2>
+            <p>
+              <a href={currentCandidate.html_url} target="_blank" rel="noopener noreferrer">
+                View GitHub Profile
+              </a>
+            </p>
+            <p>{currentCandidate.location || "Location not provided"}</p>
+            <p>{currentCandidate.email || "Email not provided"}</p>
+          </div>
         </div>
       ) : (
         <p>No candidates found.</p>
       )}
+
+      {/* Button container for positioning buttons below the card */}
+      <div className="button-container">
+        <button className={`button button-minus`} onClick={removeCandidate}>-</button>
+        <button className={`button button-plus`} onClick={saveCandidate}>+</button>
+      </div>
     </div>
   );
-};
+}
 
 export default CandidateSearch;

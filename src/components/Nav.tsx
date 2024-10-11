@@ -2,15 +2,13 @@ import { Link } from 'react-router-dom';
 
 const Nav = () => {
   return (
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">Candidate Search</Link>
-        </li>
-        <li>
-          <Link to="/SavedCandidates">Saved Candidates</Link>
-        </li>
-      </ul>
+    <nav style={{ backgroundColor: 'black', padding: '1rem' }}>
+      <Link to="/" style={{ color: 'white', marginRight: '1rem' }}>
+        Home
+      </Link>
+      <Link to="/SavedCandidates" style={{ color: 'white' }}>
+        Potential Candidates
+      </Link>
     </nav>
   );
 };
